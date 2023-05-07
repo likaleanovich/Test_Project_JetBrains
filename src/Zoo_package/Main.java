@@ -1,57 +1,50 @@
 package Zoo_package;
+
+// импортируем классы, которые находятся в другом package
+import Animal_package.Animal;
+import Animal_package.Eagle;
+import Animal_package.Elephant;
+import Animal_package.Animal.Adult;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-//        //создаем объекты животных ипользкуя созданыне переменные
-//        Animals elephant = new Animals();
-//        elephant.name = "Bonya";
-//        Animals lion = new Animals();
-//        lion.name = "Simba";
-        Animal penguin = new Animal();
-        penguin.name = "Riko";
-        System.out.println(penguin.getName() + " is a penguin");
 
-        // добавление животных в список
-        ArrayList<Animal> animals = new ArrayList<>();
-        animals.add(penguin);
+        //создаем объект животного ипользуя созданные переменные на основании класса Animal
+        Animal lion = new Animal();
+        lion.name = "Simba";
+        System.out.println(lion.getName() + " is a lion.");
+        lion.move();
+        lion.setCount();
 
-        // вывод информации о каждом животном
-        for (Animal animal : animals) {
-            System.out.println(animal.getName());
-            System.out.println(animals);
-        }
-//
-//    }
-
-//        //создаем объекты используя конструктор
-//        Animal123 elephant = new Animal123("Dumbo");
-//        Animal123 lion = new Animal123("Simba");
+        //создаем объект используя конструктор из родительского класса Animal
         Animal snail = new Animal("Beauty");
-        System.out.println(snail.getName() + " is a snail");
-//        System.out.println("There are " + elephant.getName() + ", " + lion.getName() + ", " + penguin.getName() + " in the Zoo!" );
-//    }
+        System.out.println(snail.getName() + " is a snail.");
+        snail.move();
+        snail.setCount();
 
-        //создаем объекты используя классы наследники
+        //создаем объект используя конструктор из класса наследника Elephant
         Elephant elephant = new Elephant("Graf");
-        System.out.println(elephant.getName() + " is an " + elephant.getSpecies());
-//        elephant.makeSound();
-//        elephant.move();
+        System.out.println(elephant.getName() + " is an elephant.");
+        elephant.move();
+        elephant.setCount();
+        elephant.age.info(); // вызвали метод по отображению информации на основе вложенного класса Adult
 
-        Lion lion = new Lion("Simba");
-        System.out.println(lion.getName() + " is a " + lion.getSpecies());
-//        lion.makeSound();
-//        lion.move();
-
+        //создаем объект используя конструктор из класса поднаследника Eagle
         Eagle eagle = new Eagle("Bomb");
-        System.out.println(eagle.getName() + " is an " + eagle.getSpecies());
-//        eagle.makeSound();
-//        eagle.move();
+        System.out.println(eagle.getName() + " is an eagle.");
+        eagle.move();
+        eagle.setCount();
+        eagle.age.info(); // вызвали метод по отображению информации на основе вложенного класса Adult
 
-
-
-//        System.out.println("There are " + elephant.getName() + " in the Zoo!" );
-}
-
-
-}
+        // создаем анонимный класс
+        Elephant fly_elephant = new Elephant("Bobo"){
+            @Override
+            public void move(){
+                System.out.println(this.name + " is an elephant. And " + this.name +  " is flying.");
+            }
+        };
+        fly_elephant.move();
+        fly_elephant.setCount();
+        }
+    }
