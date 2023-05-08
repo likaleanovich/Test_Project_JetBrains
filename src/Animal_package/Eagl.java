@@ -1,9 +1,9 @@
 package Animal_package;
 // класс поднаследник
-public class Eagle extends Bird{
+public class Eagl extends Bird{
 
     public Adult age = new Adult(8); // создали объект на основе вложенного класса Adult
-    public Eagle(String name) {
+    public Eagl(String name) {
         super(name);
     }
 

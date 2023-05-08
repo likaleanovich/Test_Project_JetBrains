@@ -2,10 +2,8 @@ package Zoo_package;
 
 // импортируем классы, которые находятся в другом package
 import Animal_package.Animal;
-import Animal_package.Eagle;
+import Animal_package.Eagl;
 import Animal_package.Elephant;
-import Animal_package.Animal.Adult;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,7 +29,7 @@ public class Main {
         elephant.age.info(); // вызвали метод по отображению информации на основе вложенного класса Adult
 
         //создаем объект используя конструктор из класса поднаследника Eagle
-        Eagle eagle = new Eagle("Bomb");
+        Eagl eagle = new Eagl("Bomb");
         System.out.println(eagle.getName() + " is an eagle.");
         eagle.move();
         eagle.setCount();
