@@ -8,14 +8,15 @@ import Animal_package.Elephant;
 public class Main {
     public static void main(String[] args) {
 
-        //создаем объект животного ипользуя созданные переменные на основании класса Animal
+
+        //создаем объект животного ипользуя созданные переменные на основании класса Animal_new
         Animal lion = new Animal();
         lion.name = "Simba";
         System.out.println(lion.getName() + " is a lion.");
         lion.move();
         lion.setCount();
 
-        //создаем объект используя конструктор из родительского класса Animal
+        //создаем объект используя конструктор из родительского класса Animal_new
         Animal snail = new Animal("Beauty");
         System.out.println(snail.getName() + " is a snail.");
         snail.move();
@@ -35,7 +36,9 @@ public class Main {
         eagle.setCount();
         eagle.age.info(); // вызвали метод по отображению информации на основе вложенного класса Adult
 
-        // создаем анонимный класс
+        eagle.printAnimals();
+
+        // создаем анонимный класси
         Elephant fly_elephant = new Elephant("Bobo"){
             @Override
             public void move(){

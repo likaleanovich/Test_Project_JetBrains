@@ -1,8 +1,8 @@
 package Animal_package;
 // класс наследник
-public class Bird extends Animal {
+public class bird extends Animal {
 
-    public Bird(String name) {
+    public bird(String name) {
         super(name);
     }
 
